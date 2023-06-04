@@ -11,42 +11,47 @@ class BaseChainSetting(NamedTuple):
 
 
 MAINNET = 'mainnet'
-GOERLI = 'goerli'
-PRATER = 'prater'
-SEPOLIA = 'sepolia'
-ZHEJIANG = 'zhejiang'
+TESTNET = 'testnet'
+#GOERLI = 'goerli'
+#PRATER = 'prater'
+#SEPOLIA = 'sepolia'
+#ZHEJIANG = 'zhejiang'
 CARTENZ = 'cartenz'
 
 # Mainnet setting
 MainnetSetting = BaseChainSetting(
     NETWORK_NAME=MAINNET, GENESIS_FORK_VERSION=bytes.fromhex('00000000'),
     GENESIS_VALIDATORS_ROOT=bytes.fromhex('4b363db94e286120d76eb905340fdd4e54bfe9f06bf33ff6cf5ad27f511bfe95'))
-# Goerli setting
-GoerliSetting = BaseChainSetting(
-    NETWORK_NAME=GOERLI, GENESIS_FORK_VERSION=bytes.fromhex('00001020'),
-    GENESIS_VALIDATORS_ROOT=bytes.fromhex('043db0d9a83813551ee2f33450d23797757d430911a9320530ad8a0eabc43efb'))
-# Sepolia setting
-SepoliaSetting = BaseChainSetting(
-    NETWORK_NAME=SEPOLIA, GENESIS_FORK_VERSION=bytes.fromhex('90000069'),
-    GENESIS_VALIDATORS_ROOT=bytes.fromhex('d8ea171f3c94aea21ebc42a1ed61052acf3f9209c00e4efbaaddac09ed9b8078'))
-# Zhejiang setting
-ZhejiangSetting = BaseChainSetting(
-    NETWORK_NAME=ZHEJIANG, GENESIS_FORK_VERSION=bytes.fromhex('00000069'),
-    GENESIS_VALIDATORS_ROOT=bytes.fromhex('53a92d8f2bb1d85f62d16a156e6ebcd1bcaba652d0900b2c2f387826f3481f6f'))
+# Testnet setting
+TestnetSetting = BaseChainSetting(
+    NETWORK_NAME=TESTNET, GENESIS_FORK_VERSION=bytes.fromhex('10001103'),
+    GENESIS_VALIDATORS_ROOT=bytes.fromhex('0e65119cfae7557ec49e899a055da7b650b12db9b4908a2bb6918632f951e84e'))
 # Cartenz setting
 CartenzSetting = BaseChainSetting(
-    NETWORK_NAME=CARTENZ, GENESIS_FORK_VERSION=bytes.fromhex('00677693'),
-    GENESIS_VALIDATORS_ROOT=bytes.fromhex('47b10d22369410250dcc9ff9f3b6d627efa93dbccf3036c9a4e6081963ad7d75')
-)
+    NETWORK_NAME=CARTENZ, GENESIS_FORK_VERSION=bytes.fromhex('10001103'),
+    GENESIS_VALIDATORS_ROOT=bytes.fromhex('0e65119cfae7557ec49e899a055da7b650b12db9b4908a2bb6918632f951e84e'))
+# Goerli setting
+#GoerliSetting = BaseChainSetting(
+#    NETWORK_NAME=GOERLI, GENESIS_FORK_VERSION=bytes.fromhex('00001020'),
+#    GENESIS_VALIDATORS_ROOT=bytes.fromhex('043db0d9a83813551ee2f33450d23797757d430911a9320530ad8a0eabc43efb'))
+# Sepolia setting
+#SepoliaSetting = BaseChainSetting(
+#    NETWORK_NAME=SEPOLIA, GENESIS_FORK_VERSION=bytes.fromhex('90000069'),
+#    GENESIS_VALIDATORS_ROOT=bytes.fromhex('d8ea171f3c94aea21ebc42a1ed61052acf3f9209c00e4efbaaddac09ed9b8078'))
+# Zhejiang setting
+#ZhejiangSetting = BaseChainSetting(
+#    NETWORK_NAME=ZHEJIANG, GENESIS_FORK_VERSION=bytes.fromhex('00000069'),
+#    GENESIS_VALIDATORS_ROOT=bytes.fromhex('53a92d8f2bb1d85f62d16a156e6ebcd1bcaba652d0900b2c2f387826f3481f6f'))
 
 
 ALL_CHAINS: Dict[str, BaseChainSetting] = {
     MAINNET: MainnetSetting,
-    GOERLI: GoerliSetting,
-    PRATER: GoerliSetting,  # Prater is the old name of the Prater/Goerli testnet
-    SEPOLIA: SepoliaSetting,
-    ZHEJIANG: ZhejiangSetting,
     CARTENZ: CartenzSetting,
+    TESTNET: TestnetSetting,
+#    GOERLI: GoerliSetting,
+#    PRATER: GoerliSetting,
+#    SEPOLIA: SepoliaSetting,
+#    ZHEJIANG: ZhejiangSetting,
 }
 
 
